@@ -12,3 +12,6 @@ func _process(delta):
 	$Logo.rotation_degrees += 60 * delta
 	if $Logo.position.x > 1000:
 		$Logo.pos.x = 0
+		
+	if Input.is_action_pressed("left"):
+			$Logo.pos.x -= 60 * delta
