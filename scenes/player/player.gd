@@ -1,11 +1,11 @@
-extends Node2D
+extends CharacterBody2D
 
 var speed: int = 500
 
-func _process(delta):
+func _process(_delta):
 	#input
 	var direction = Input.get_vector("left", "right", "up", "down")
-	position += direction * speed * delta
+	velocity = direction * speed 
 	
 	#laser
 	if Input.is_action_pressed("primary action"):
@@ -13,3 +13,5 @@ func _process(delta):
 	
 	if Input.is_action_pressed("secondary action"):
 		print_rich("grande thrown")	
+		
+	move_and_slide()
