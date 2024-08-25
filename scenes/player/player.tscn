@@ -22,5 +22,16 @@ one_shot = true
 
 [node name="GrenadeTimer" type="Timer" parent="."]
 
+[node name="LaserStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-4, -117)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-15, -107)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(8, -107)
+
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
