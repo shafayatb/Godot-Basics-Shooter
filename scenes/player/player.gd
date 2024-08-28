@@ -13,13 +13,12 @@ func _process(_delta):
 	velocity = direction * speed 
 	
 	look_at(get_global_mouse_position())
-	
+	var player_direction = (get_global_mouse_position() - position).normalized()
 	#laser
 	if Input.is_action_pressed("primary action") and can_laser:
 		print_rich("Lasr shot")
 		can_laser = false
 		$LaserTimer.start(0.5)
-		var player_direction = (get_global_mouse_position() - position).normalized()
 		laser.emit(get_marker_position(), player_direction)
 		
 	
@@ -27,7 +26,6 @@ func _process(_delta):
 		print_rich("grande thrown")	
 		can_grenade= false
 		$GrenadeTimer.start(2.0)
-		var player_direction = (get_global_mouse_position() - position).normalized()
 		granede.emit(get_marker_position(), player_direction)
 		
 	move_and_slide()

@@ -13,6 +13,7 @@ radius = 22.0227
 [node name="Grenade" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_dpnbw")
 gravity_scale = 0.0
+linear_damp = 1.6
 script = ExtResource("1_g3pur")
 
 [node name="GranadeImage" type="Sprite2D" parent="."]
