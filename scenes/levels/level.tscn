@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://crw3rt4f1eu18"]
+[gd_scene load_steps=17 format=4 uid="uid://crw3rt4f1eu18"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_j0dw8"]
 [ext_resource type="Texture2D" uid="uid://esc4yfryx5uv" path="res://graphics/ground/stones.png" id="2_126ra"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bghnjubkktqb4" path="res://graphics/decals/moss/moss_3.png" id="6_yeh31"]
 [ext_resource type="Texture2D" uid="uid://djvyr5sqyuqd6" path="res://graphics/decals/moss/moss_4.png" id="7_pijhx"]
 [ext_resource type="Texture2D" uid="uid://b7r6sx8n3e7sd" path="res://graphics/decals/moss/moss_5.png" id="8_2nb7b"]
+[ext_resource type="PackedScene" uid="uid://tdclbhk6q6gd" path="res://scenes/houses/house.tscn" id="10_elhk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3adhc"]
 resource_name = "walls"
@@ -56,23 +57,19 @@ script = ExtResource("1_j0dw8")
 texture_repeat = 2
 texture = ExtResource("2_126ra")
 region_enabled = true
-region_rect = Rect2(-13382.8, -6493.43, 25886.1, 14483.7)
+region_rect = Rect2(-13382.8, -6493.43, 16000, 10000)
 
 [node name="DirtPatch" type="Sprite2D" parent="Ground"]
 modulate = Color(1, 0.756863, 0.603922, 1)
 position = Vector2(-4689, 1980)
 texture = ExtResource("3_e0qa0")
 
-[node name="Moss1" type="Sprite2D" parent="Ground"]
-position = Vector2(1603, 2170)
-texture = ExtResource("4_y28oc")
-
 [node name="Moss2" type="Sprite2D" parent="Ground"]
 position = Vector2(-632, 2161)
 texture = ExtResource("5_b62ev")
 
 [node name="Moss3" type="Sprite2D" parent="Ground"]
-position = Vector2(-1570, 1701)
+position = Vector2(3680, -1895)
 texture = ExtResource("6_yeh31")
 
 [node name="Moss4" type="Sprite2D" parent="Ground"]
@@ -94,13 +91,21 @@ tile_set = SubResource("TileSet_qakfi")
 
 [node name="Walls" type="TileMapLayer" parent="Ground/TileMap"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD7////AAABAAAAAAD6////AAABAAAAAAD5////AAABAAAAAAD4////AAABAAAAAAD3////AAABAAAAAAD2////AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAACAAIAAAAJAP7/AAAAAAIAAAAJAPz/AAAAAAIAAAAJAP3/AAAAAAIAAAAJAPv/AAAAAAIAAAAFAP7/AAACAAEAAAAEAP7/AAABAAAAAAD9////AAABAAAAAAD+////AAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD7////AAABAAAAAAD6////AAABAAAAAAD5////AAABAAAAAAD4////AAABAAAAAAD3////AAABAAAAAAD2////AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAACAAIAAAAJAP7/AAAAAAIAAAAJAPz/AAAAAAIAAAAJAP3/AAAAAAIAAAAJAPv/AAAAAAIAAAAFAP7/AAACAAEAAAAEAP7/AAABAAAAAAD9////AAABAAAAAAD+////AAACAAAAAAD2//7/AAAAAAIAAAD2//3/AAAAAAIAAAD2//z/AAAAAAIAAAD2//v/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_qakfi")
+
+[node name="Moss1" type="Sprite2D" parent="."]
+position = Vector2(2248, 324)
+texture = ExtResource("4_y28oc")
 
 [node name="Gate" parent="." instance=ExtResource("2_803wm")]
 position = Vector2(579, 85)
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="House" parent="." instance=ExtResource("10_elhk5")]
+position = Vector2(6783, 2904)
+rotation = 2.5154
 
 [node name="Player" parent="." instance=ExtResource("4_u7ebt")]
 position = Vector2(571, 590)
