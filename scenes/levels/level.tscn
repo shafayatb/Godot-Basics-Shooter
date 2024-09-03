@@ -102,11 +102,11 @@ texture = ExtResource("4_y28oc")
 [node name="Gate" parent="." instance=ExtResource("2_803wm")]
 position = Vector2(579, 85)
 
-[node name="Projectiles" type="Node2D" parent="."]
-
 [node name="House" parent="." instance=ExtResource("10_elhk5")]
 position = Vector2(6783, 2904)
 rotation = 2.5154
+
+[node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_u7ebt")]
 position = Vector2(571, 590)
