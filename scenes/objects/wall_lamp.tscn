@@ -1,28 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ptudw6js3vq1"]
+[gd_scene load_steps=4 format=3 uid="uid://ptudw6js3vq1"]
 
 [ext_resource type="Texture2D" uid="uid://d0jnjcef056an" path="res://graphics/objects/wall_lamp.png" id="1_pun10"]
 [ext_resource type="Texture2D" uid="uid://ddldfxxpvbhue" path="res://graphics/lights/texture/circle.png" id="2_52lwe"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iou2d"]
-radius = 67.0
-height = 818.0
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3ene8"]
-polygon = PackedVector2Array(-224, 40, -248, 64, -384, 64, -392, 56, -368, 16, -320, -24, -272, -48, 280, -48, 320, -32, 352, -16, 368, 0, 392, 32, 400, 56, 384, 72, 272, 72, 240, 48, 240, -24, -224, -24)
+polygon = PackedVector2Array(224, 8, 224, 48, 208, 56, 208, -8)
 
 [node name="WallLamp" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_iou2d")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-400, 72, -424, 32, -384, -32, -312, -72, -280, -72, 256, -72, 296, -72, 368, -40, 416, 16, 392, 64, 368, 72, 248, 80, 216, 80, -240, 80, -264, 80, -376, 80)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(513, 153)
 texture = ExtResource("1_pun10")
+region_enabled = true
+region_rect = Rect2(-7.77988, -5.90802, 863.324, 167.284)
+region_filter_clip_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 1, 0.0784314, 1)
-energy = 4.0
+energy = 7.0
 shadow_enabled = true
 shadow_color = Color(0.329412, 0.290196, 0.0431373, 0.0823529)
 shadow_filter = 1
@@ -31,4 +28,9 @@ texture = ExtResource("2_52lwe")
 texture_scale = 2.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3ene8")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(-8, 48)
+scale = Vector2(-1, -1)
 occluder = SubResource("OccluderPolygon2D_3ene8")
