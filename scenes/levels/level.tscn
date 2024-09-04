@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://crw3rt4f1eu18"]
+[gd_scene load_steps=19 format=4 uid="uid://crw3rt4f1eu18"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_j0dw8"]
 [ext_resource type="Texture2D" uid="uid://esc4yfryx5uv" path="res://graphics/ground/stones.png" id="2_126ra"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7r6sx8n3e7sd" path="res://graphics/decals/moss/moss_5.png" id="8_2nb7b"]
 [ext_resource type="PackedScene" uid="uid://tdclbhk6q6gd" path="res://scenes/houses/house.tscn" id="10_elhk5"]
 [ext_resource type="PackedScene" uid="uid://ci32m8bd4blr6" path="res://scenes/objects/steam_vent.tscn" id="14_6qvgb"]
+[ext_resource type="PackedScene" uid="uid://cpgo61xs77xlf" path="res://scenes/objects/light_fan_animation.tscn" id="15_g4lnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3adhc"]
 resource_name = "walls"
@@ -117,6 +118,11 @@ position_smoothing_enabled = true
 
 [node name="SteamVent" parent="." instance=ExtResource("14_6qvgb")]
 position = Vector2(-82, 630)
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("15_g4lnn")]
+position = Vector2(4698, 3184)
+autoplay = "default"
+frame_progress = 0.453628
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="granede" from="Player" to="." method="_on_player_granede"]
