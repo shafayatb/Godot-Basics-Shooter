@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://crw3rt4f1eu18"]
+[gd_scene load_steps=20 format=4 uid="uid://crw3rt4f1eu18"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_j0dw8"]
 [ext_resource type="Texture2D" uid="uid://esc4yfryx5uv" path="res://graphics/ground/stones.png" id="2_126ra"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://crif8j6vjloyn" path="res://scenes/player/player.tscn" id="4_u7ebt"]
 [ext_resource type="Texture2D" uid="uid://o343phloynrv" path="res://graphics/decals/moss/moss_1.png" id="4_y28oc"]
 [ext_resource type="Texture2D" uid="uid://bitsum1b7qcgu" path="res://graphics/decals/moss/moss_2.png" id="5_b62ev"]
+[ext_resource type="PackedScene" uid="uid://1ivndxw21paf" path="res://scenes/enemies/drone.tscn" id="5_i5mid"]
 [ext_resource type="Texture2D" uid="uid://bghnjubkktqb4" path="res://graphics/decals/moss/moss_3.png" id="6_yeh31"]
 [ext_resource type="Texture2D" uid="uid://djvyr5sqyuqd6" path="res://graphics/decals/moss/moss_4.png" id="7_pijhx"]
 [ext_resource type="Texture2D" uid="uid://b7r6sx8n3e7sd" path="res://graphics/decals/moss/moss_5.png" id="8_2nb7b"]
@@ -123,6 +124,9 @@ position = Vector2(-82, 630)
 position = Vector2(4698, 3184)
 autoplay = "default"
 frame_progress = 0.453628
+
+[node name="Drone" parent="." instance=ExtResource("5_i5mid")]
+position = Vector2(226, 956)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
