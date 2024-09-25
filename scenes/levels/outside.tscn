@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://cqe5ha4ncrpvk"]
+[gd_scene load_steps=20 format=4 uid="uid://cqe5ha4ncrpvk"]
 
 [ext_resource type="PackedScene" uid="uid://crw3rt4f1eu18" path="res://scenes/levels/level.tscn" id="1_smi27"]
 [ext_resource type="Texture2D" uid="uid://esc4yfryx5uv" path="res://graphics/ground/stones.png" id="2_fjh4b"]
+[ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_lfc3h"]
 [ext_resource type="Texture2D" uid="uid://buc7e3h7bt8h1" path="res://graphics/decals/dirt_patch.png" id="3_a2kty"]
 [ext_resource type="Texture2D" uid="uid://o343phloynrv" path="res://graphics/decals/moss/moss_1.png" id="4_anyrl"]
 [ext_resource type="Texture2D" uid="uid://bitsum1b7qcgu" path="res://graphics/decals/moss/moss_2.png" id="5_6dvhs"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ci32m8bd4blr6" path="res://scenes/objects/steam_vent.tscn" id="12_4ce3j"]
 [ext_resource type="PackedScene" uid="uid://cpgo61xs77xlf" path="res://scenes/objects/light_fan_animation.tscn" id="13_gpmvc"]
 [ext_resource type="PackedScene" uid="uid://bvthynlfawyxy" path="res://scenes/objects/gate.tscn" id="14_2pigj"]
+[ext_resource type="PackedScene" uid="uid://bdfsfrw0u5b7k" path="res://scenes/objects/toilet.tscn" id="16_us4l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dufu"]
 resource_name = "walls"
@@ -50,6 +52,7 @@ sources/0 = SubResource("TileSetAtlasSource_4dufu")
 sources/1 = SubResource("TileSetAtlasSource_o752c")
 
 [node name="Outside" instance=ExtResource("1_smi27")]
+script = ExtResource("2_lfc3h")
 
 [node name="Stones" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -109,3 +112,8 @@ autoplay = "default"
 
 [node name="Gate" parent="." index="2" instance=ExtResource("14_2pigj")]
 position = Vector2(579, 85)
+
+[node name="Toilet" parent="." index="4" instance=ExtResource("16_us4l0")]
+position = Vector2(1042, 881)
+
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
