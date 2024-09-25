@@ -204,6 +204,7 @@ animations = [{
 
 [node name="LightFanAnimation" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_v03eu")
+autoplay = "default"
 frame_progress = 0.168405
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
