@@ -45,3 +45,12 @@ func get_marker_position() -> Vector2:
 	var laser_markers = $LaserStartPositions.get_children()
 	var selected_laser = laser_markers[randi() % laser_markers.size()]
 	return selected_laser.global_position
+	
+func add_item(type: String):
+	match type:
+		"laser":
+			Globals.laser_amount += 10
+		"grenade":
+			Globals.grenade_amount += 3
+		"health":
+			print("increase health by 20")		

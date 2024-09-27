@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bvptcogwwghmg"]
+[gd_scene load_steps=14 format=4 uid="uid://bvptcogwwghmg"]
 
 [ext_resource type="PackedScene" uid="uid://crw3rt4f1eu18" path="res://scenes/levels/level.tscn" id="1_h2gmu"]
 [ext_resource type="TileSet" uid="uid://6w4ht04t15x7" path="res://scenes/levels/house.tres" id="2_4rq8c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://l70f6gbvptkr" path="res://graphics/lights/overlays/infrastructure.png" id="7_7064q"]
 [ext_resource type="Texture2D" uid="uid://bwsoox3mri1ou" path="res://graphics/lights/overlays/hole.png" id="8_vxgco"]
 [ext_resource type="Texture2D" uid="uid://du2h3col37fse" path="res://graphics/lights/overlays/lattice.png" id="9_m8bfi"]
+[ext_resource type="PackedScene" uid="uid://j3ddnc3hl28e" path="res://scenes/objects/item.tscn" id="12_ki83j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhjc5"]
 size = Vector2(1580, 410)
@@ -70,6 +71,10 @@ metadata/_edit_group_ = true
 texture = ExtResource("6_ke7le")
 texture_scale = 3.0
 
+[node name="Lights" parent="." index="3"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("6_7ykjr")]
 position = Vector2(7505, 1631)
 
@@ -115,5 +120,8 @@ position = Vector2(5, 4423)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(780, 337)
 shape = SubResource("RectangleShape2D_dhjc5")
+
+[node name="Item" parent="." index="7" instance=ExtResource("12_ki83j")]
+position = Vector2(2329, 4089)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
