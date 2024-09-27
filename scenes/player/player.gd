@@ -53,4 +53,4 @@ func add_item(type: String):
 		"grenade":
 			Globals.grenade_amount += 3
 		"health":
-			print("increase health by 20")		
+			Globals.health += 10		
