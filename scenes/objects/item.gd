@@ -17,6 +17,12 @@ func _process(delta):
 	rotation += rotation_speed * delta
 
 
-func _on_body_entered(body):
-	body.add_item(type)
+func _on_body_entered(_body):
+	match type:
+		"laser":
+			Globals.laser_amount += 10
+		"grenade":
+			Globals.grenade_amount += 3
+		"health":
+			Globals.health += 10	
 	queue_free()
