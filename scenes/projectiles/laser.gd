@@ -18,5 +18,4 @@ func _on_body_entered(body):
 
 
 func _on_laser_timer_timeout():
-	print("kill laser")
 	queue_free()
