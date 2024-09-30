@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdfsfrw0u5b7k"]
+[gd_scene load_steps=6 format=3 uid="uid://bdfsfrw0u5b7k"]
 
 [ext_resource type="PackedScene" uid="uid://c1u1cp5cvl6xf" path="res://scenes/objects/item_container.tscn" id="1_nxsbx"]
 [ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_4isgi"]
 [ext_resource type="Texture2D" uid="uid://dfbbrdiof5fdc" path="res://graphics/objects/toilet.png" id="2_4yn1v"]
+[ext_resource type="Texture2D" uid="uid://djc2a8172sb0w" path="res://graphics/objects/lid.png" id="4_rdydc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyvmc"]
 radius = 109.0
@@ -11,8 +12,15 @@ height = 252.0
 [node name="Toilet" instance=ExtResource("1_nxsbx")]
 script = ExtResource("2_4isgi")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="BaseSprite" parent="." index="0"]
 texture = ExtResource("2_4yn1v")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="LidSprite" parent="." index="1"]
+position = Vector2(0, 29)
+texture = ExtResource("4_rdydc")
+
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CapsuleShape2D_tyvmc")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnItems" index="0"]
+position = Vector2(3, 62)
