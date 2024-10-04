@@ -63,14 +63,6 @@ position = Vector2(-167, 4089)
 rotation = 4.71239
 scale = Vector2(0.6, 0.6)
 
-[node name="Player" parent="." index="3"]
-position = Vector2(670, 3752)
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
-texture = ExtResource("6_ke7le")
-texture_scale = 3.0
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 color = Color(0.281619, 0.373148, 0.464886, 1)
 blend_mode = 1
@@ -83,7 +75,18 @@ position = Vector2(5, 4423)
 position = Vector2(780, 337)
 shape = SubResource("RectangleShape2D_dhjc5")
 
-[node name="Lights" parent="." index="6"]
+[node name="Player" parent="." index="6"]
+position = Vector2(670, 3752)
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
+texture = ExtResource("6_ke7le")
+texture_scale = 3.0
+
+[node name="Item" parent="." index="7" instance=ExtResource("12_ki83j")]
+position = Vector2(2329, 4089)
+
+[node name="Lights" parent="." index="8"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -120,8 +123,5 @@ modulate = Color(0.903888, 0.389288, 0.297482, 0.0588235)
 position = Vector2(3593, 4472)
 scale = Vector2(2.9222, 2.96008)
 texture = ExtResource("9_m8bfi")
-
-[node name="Item" parent="." index="7" instance=ExtResource("12_ki83j")]
-position = Vector2(2329, 4089)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

@@ -16,6 +16,7 @@ func _process(_delta):
 	
 	look_at(get_global_mouse_position())
 	var player_direction = (get_global_mouse_position() - position).normalized()
+	Globals.player_position = global_position
 	#laser
 	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
 		Globals.laser_amount -= 1
