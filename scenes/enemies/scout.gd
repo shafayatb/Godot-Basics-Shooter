@@ -36,3 +36,6 @@ func _on_attack_area_body_exited(_body):
 
 func _on_laser_timer_timeout():
 	can_laser = true
+	
+func hit():
+	print('took damage')	

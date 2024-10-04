@@ -29,7 +29,7 @@ radius = 43.0465
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ci24m"]
 polygon = PackedVector2Array(-11, -59, 0, -59, 1, -50, 10, -49, 10, -58, 28, -59, 30, -48, 39, -50, 41, -39, 51, -39, 51, -30, 70, -29, 71, -21, 89, -20, 91, -9, 101, -9, 101, 3, 91, 2, 91, 12, 70, 12, 70, 21, 60, 22, 60, 30, 31, 30, 31, 39, 0, 40, 0, 50, -50, 50, -50, 42, -61, 41, -61, 32, -69, 31, -69, -28, -63, -28, -61, -37, -52, -37, -51, -49, -21, -49, -21, -58)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_52ser")
 

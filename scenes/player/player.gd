@@ -9,6 +9,9 @@ var speed: int = max_speed
 signal laser(position, direction)
 signal granede(position, direction)
 
+func hit():
+	print('I took damage')	
+
 func _process(_delta):
 	#input
 	var direction = Input.get_vector("left", "right", "up", "down")
