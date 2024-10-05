@@ -3,8 +3,18 @@ extends CharacterBody2D
 var player_entered: bool = false
 var can_laser: bool = true
 var last_position := 0
+var health := 30
+var will_take_damage := true
 
 signal laser(position, direction)
+
+func hit():
+	if will_take_damage:
+		health -= 10
+		will_take_damage = false
+		$Timers/HitTimer.start()
+		if health <=0:
+			queue_free()
 
 func _process(_delta):
 	if player_entered:
@@ -14,7 +24,7 @@ func _process(_delta):
 			var direction = (Globals.player_position - position).normalized()
 			laser.emit(pos, direction)
 			can_laser = false
-			$LaserTimer.start()
+			$Timers/LaserTimer.start()
 		
 
 func get_marker_position() -> Vector2:
@@ -36,6 +46,6 @@ func _on_attack_area_body_exited(_body):
 
 func _on_laser_timer_timeout():
 	can_laser = true
-	
-func hit():
-	print('took damage')	
+
+func _on_hit_timer_timeout():
+	will_take_damage = true
