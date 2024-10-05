@@ -117,7 +117,7 @@ position = Vector2(579, 85)
 position = Vector2(826, 1087)
 
 [node name="Item" parent="." index="6" instance=ExtResource("16_llcw5")]
-position = Vector2(143, 785)
+position = Vector2(-1627, 758)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

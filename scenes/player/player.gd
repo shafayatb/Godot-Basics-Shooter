@@ -10,7 +10,7 @@ signal laser(position, direction)
 signal granede(position, direction)
 
 func hit():
-	print('I took damage')	
+	Globals.health -= 10
 
 func _process(_delta):
 	#input
