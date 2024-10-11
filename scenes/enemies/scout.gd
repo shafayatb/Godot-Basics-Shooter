@@ -13,7 +13,8 @@ func hit():
 		health -= 10
 		will_take_damage = false
 		$Timers/HitTimer.start()
-		if health <=0:
+		$Sprite2D.material.set_shader_parameter("progress", 1)
+	if health <=0:
 			queue_free()
 
 func _process(_delta):
@@ -49,3 +50,4 @@ func _on_laser_timer_timeout():
 
 func _on_hit_timer_timeout():
 	will_take_damage = true
+	$Sprite2D.material.set_shader_parameter("progress", 0)
