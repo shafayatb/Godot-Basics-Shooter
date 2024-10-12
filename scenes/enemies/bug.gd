@@ -20,7 +20,6 @@ func hit():
 			
 func _process(_delta):
 	look_at(Globals.player_position)
-	look_at(Globals.player_position)
 	if player_can_take_damage:
 		if can_attack:
 			$AnimatedSprite2D.play("attack")
