@@ -13,8 +13,10 @@ func hit():
 		will_take_damage = false
 		$Timers/HitTimer.start()
 		$AnimatedSprite2D.material.set_shader_parameter("progress", 1)
+		$Particles/HitParticles.emitting = true
 	if health <=0:
-			queue_free()
+		await  get_tree().create_timer(0.5).timeout
+		queue_free()
 			
 func _process(_delta):
 	look_at(Globals.player_position)
