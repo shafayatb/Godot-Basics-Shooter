@@ -102,7 +102,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 24.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 24.0
+"speed": 30.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmhgv"]
@@ -184,7 +184,9 @@ material = ExtResource("2_7kvyl")
 rotation = 1.5708
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_1qp06")
-animation = &"walk"
+animation = &"attack"
+frame = 20
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 2)
