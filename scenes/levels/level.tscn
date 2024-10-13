@@ -11,6 +11,8 @@ script = ExtResource("1_j0dw8")
 
 [node name="Items" type="Node2D" parent="."]
 
+[node name="Infestations" type="Node2D" parent="."]
+
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node" parent="."]

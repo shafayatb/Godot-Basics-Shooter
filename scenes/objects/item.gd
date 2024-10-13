@@ -2,7 +2,7 @@ extends Area2D
 
 var rotation_speed: int = 4
 var item_options: Array[String] = ['laser','laser','laser','laser', 'grenade', 'grenade', 'grenade', 'health','health']
-var type: String = 'health'
+var type: String = item_options.pick_random()
 
 var direction: Vector2
 var distance: int = randi_range(150, 250)

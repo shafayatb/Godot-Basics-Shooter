@@ -137,7 +137,7 @@ script = ExtResource("1_4bwrc")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 2
-collision_mask = 11
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
 polygon = PackedVector2Array(-231, -168, -101, -174, -52, -140, 11, -171, 110, -175, 155, -163, 168, -135, 177, -102, 188, -70, 178, -57, 178, -40, 186, -24, 186, 25, 176, 29, 178, 53, 186, 66, 186, 83, 176, 92, 149, 155, 67, 178, 5, 172, -48, 134, -88, 168, -151, 184, -223, 180, -235, 112, -236, 58, -284, 52, -301, 0, -293, -41, -238, -54, -233, -111)
