@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cqe5ha4ncrpvk"]
+[gd_scene load_steps=35 format=4 uid="uid://cqe5ha4ncrpvk"]
 
 [ext_resource type="PackedScene" uid="uid://crw3rt4f1eu18" path="res://scenes/levels/level.tscn" id="1_smi27"]
 [ext_resource type="Texture2D" uid="uid://esc4yfryx5uv" path="res://graphics/ground/stones.png" id="2_fjh4b"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cpgo61xs77xlf" path="res://scenes/objects/light_fan_animation.tscn" id="13_gpmvc"]
 [ext_resource type="PackedScene" uid="uid://bvthynlfawyxy" path="res://scenes/objects/gate.tscn" id="14_2pigj"]
 [ext_resource type="Texture2D" uid="uid://cgk8inq4kcij0" path="res://graphics/objects/infestation/large.png" id="16_4gfea"]
-[ext_resource type="PackedScene" uid="uid://j3ddnc3hl28e" path="res://scenes/objects/item.tscn" id="16_llcw5"]
 [ext_resource type="PackedScene" uid="uid://ytc2gv1u01nm" path="res://scenes/objects/box.tscn" id="16_qtr2q"]
 [ext_resource type="Texture2D" uid="uid://c40815trplg5a" path="res://graphics/objects/infestation/medium.png" id="17_7h27w"]
 [ext_resource type="PackedScene" uid="uid://bdfsfrw0u5b7k" path="res://scenes/objects/toilet.tscn" id="17_8txg3"]
@@ -25,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://4j7xmeu0etqt" path="res://scenes/enemies/car.tscn" id="20_dyqo0"]
 [ext_resource type="Texture2D" uid="uid://cn0bi6l1a0iyj" path="res://graphics/objects/infestation/spikes.png" id="20_o67lg"]
 [ext_resource type="Texture2D" uid="uid://bnjuifh58h4ir" path="res://graphics/objects/infestation/line.png" id="21_j2nus"]
+[ext_resource type="PackedScene" uid="uid://cb3s6ysg7kg81" path="res://scenes/enemies/hunter.tscn" id="24_ea5tc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dufu"]
 resource_name = "walls"
@@ -89,6 +89,11 @@ size = Vector2(1775.5, 294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84lal"]
 size = Vector2(303, 227.473)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_axigc"]
+vertices = PackedVector2Array(-2224.91, 4514.53, -449.844, 4281.6, -269.953, 4271.01, 317.898, 4297.55, 307.102, 5384.9, 105.859, 5363.89, -1429.95, 5106.11, -584.953, 2825.98, -472.789, 2791.47, -2238.11, 3164.19, -700.047, 2609.91, -2426.07, 2586, -2423.18, 3178.77, -3199.91, 2591.06, -3539.93, 805.43, -3541.87, 630, -3424, 641.188, -3717.84, 885.703, -4177.1, 1938.33, 310.867, 5879.63, 318.992, 5964.89, -1433.95, 5949.08, 112.117, 5871.61, -4166.93, 3352.84, -2413.13, 3695.04, -2630.52, 3774.19, -2418.99, 5095, -2414.26, 4523.5, -4565.06, 2684, -4358.2, 2684, -4371.2, 3356.17, -5096.47, 3362.1, -5079.8, 3162.04, -4395.41, 5113.98, -5326.78, 5107.07, -5292.12, 3472.89, -4394.68, 5113.98, -4561.94, 2177, -5292, 1655.16, -5292, 641.953, -4359.03, 638, -4368.8, 1999.63, -4373.73, 2177, -2613.34, 4012.53, -2402.23, 4023.48, -5228.7, 2842.57, -5326.03, 2817.25, -5330.96, 1663.15, -5170.86, 2979.92, -3870.55, 641.953)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 1), PackedInt32Array(7, 1, 0, 9, 10), PackedInt32Array(11, 10, 9, 12, 13), PackedInt32Array(14, 15, 16, 13), PackedInt32Array(17, 14, 13, 18), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 18, 13, 12, 24, 25), PackedInt32Array(22, 21, 6, 5), PackedInt32Array(0, 6, 26, 27), PackedInt32Array(28, 29, 30, 31, 32), PackedInt32Array(33, 34, 35, 31, 30, 36), PackedInt32Array(37, 38, 39, 40, 41, 42), PackedInt32Array(23, 43, 27, 26, 36, 30), PackedInt32Array(43, 44, 27), PackedInt32Array(28, 45, 46, 47, 38, 37), PackedInt32Array(23, 25, 43), PackedInt32Array(28, 32, 48, 45), PackedInt32Array(17, 18, 41, 40, 49)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-5302, 632, -5302, 1647, -5341, 1655, -5336, 2825, -5236, 2851, -5180, 2984, -5090, 3164, -5106, 3356, -5302, 3467, -5337, 5117, -4394, 5124, -4361, 3346, -4348, 2674, -4555, 2674, -4552, 2187, -4364, 2187, -4359, 2007, -4359, 628), PackedVector2Array(-4359, 628, -4359, 2007, -4187, 1952, -4177, 3343, -4361, 3346, -4396, 5124, -2419, 5105, -2404, 4513, -2392, 4014, -2604, 4003, -2620, 3781, -2403, 3702, -2413, 3188, -2426, 2576, -3191, 2581, -3415, 632, -3552, 619, -3550, 799, -3714, 873, -3865, 632), PackedVector2Array(-2426, 2576, -2413, 3188, -2248, 3175, -2235, 4505, -2404, 4513, -2419, 5105, -1440, 5116, -1444, 5959, 330, 5975, 320, 5870, 122, 5862, 116, 5375, 317, 5396, 328, 4288, -270, 4261, -440, 4271, -463, 2778, -580, 2814, -694, 2600)])
 
 [node name="Outside" instance=ExtResource("1_smi27")]
 script = ExtResource("2_lfc3h")
@@ -366,17 +371,17 @@ collision_mask = 11
 position = Vector2(-1561, 2403)
 polygon = PackedVector2Array(-3799, 508, -3670, 501, -3668, 625, -3601, 677, -3577, 905, -3772, 1018)
 
-[node name="Item" parent="." index="6" instance=ExtResource("16_llcw5")]
-position = Vector2(-1627, 758)
+[node name="Hunter" parent="Enemies" index="0" instance=ExtResource("24_ea5tc")]
+position = Vector2(-5084, 3529)
 
-[node name="Path2D" type="Path2D" parent="." index="9"]
+[node name="Path2D" type="Path2D" parent="." index="8"]
 curve = SubResource("Curve2D_elrgo")
 
 [node name="Car" parent="Path2D" index="0" instance=ExtResource("20_dyqo0")]
 position = Vector2(-6679, 1534)
 rotation = -0.698909
 
-[node name="LevelBoundaries" type="Node2D" parent="." index="11"]
+[node name="LevelBoundaries" type="Node2D" parent="." index="10"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LevelBoundaries" index="0"]
 collision_layer = 16
@@ -406,6 +411,10 @@ collision_layer = 16
 position = Vector2(7825.98, 1935.29)
 rotation = 0.632361
 shape = SubResource("RectangleShape2D_84lal")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="11"]
+navigation_polygon = SubResource("NavigationPolygon_axigc")
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
