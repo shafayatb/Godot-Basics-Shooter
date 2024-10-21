@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var active: bool = false
 var speed: int = 300
+var player_near: bool = false
 
 func _ready():
 	$NavigationAgent2D.path_desired_distance = 4.0
@@ -34,8 +35,10 @@ func _on_position_timer_timeout():
 
 
 func _on_attack_area_body_entered(body):
-	pass # Replace with function body.
+	player_near = true
+	$AnimationPlayer.play("attack")
 
 
 func _on_attack_area_body_exited(body):
-	pass # Replace with function body.
+	player_near = false
+	
